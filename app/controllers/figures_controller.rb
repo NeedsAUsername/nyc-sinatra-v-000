@@ -51,12 +51,12 @@ class FiguresController < ApplicationController
 
     if !params[:title].empty?
       @title = Title.create(params[:title])
-      @figure << @title
+      @figure.titles << @title
     end
 
     if !params[:landmark].empty?
       @landmark = Landmark.create(params[:landmark])
-      @figure << @landmark
+      @figure.landmarks << @landmark
     end
 
 
