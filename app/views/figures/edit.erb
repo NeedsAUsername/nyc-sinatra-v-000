@@ -12,6 +12,7 @@
 
       <% Title.all.each do |title| %>
         <input type="checbox" name="figure[title_ids][]" value="<%= title.id %>">
+      <% end %>
 
       <br><br>
       <input type="submit" value="Edit Figure">
