@@ -39,7 +39,15 @@ class FiguresController < ApplicationController
     @figure = Figure.find_by_id(params[:figure])
     @figure.name = params[:figure][:name]
 
-    @figure 
+    @figure.titles.clear
+    params[:figure][:title].each do |title|
+      @figure.titles << title
+    end
+    
+    @figure.landmarks.clear
+    params[:figure][:landmarks].each do |landmark|
+      @figures.landmarks << landmark
+    end
 
     erb :'/figures/show'
   end
