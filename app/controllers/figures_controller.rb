@@ -37,17 +37,17 @@ class FiguresController < ApplicationController
 
   post '/figures/:id' do
     @figure = Figure.find_by_id(params[:figure])
-    @figure.name = params[:figure][:name]
+    @figure.update(params[:figure])
 
-    @figure.titles.clear
-    params[:figure][:title_ids].each do |title_id|
-      @figure.titles << Title.find_by_id(title_id)
-    end
-
-    @figure.landmarks.clear
-    params[:figure][:landmark_ids].each do |landmark_id|
-      @figures.landmarks << Landmark.find_by_id(landmark_id)
-    end
+    # @figure.titles.clear
+    # params[:figure][:title_ids].each do |title_id|
+    #   @figure.titles << Title.find_by_id(title_id)
+    # end
+    # 
+    # @figure.landmarks.clear
+    # params[:figure][:landmark_ids].each do |landmark_id|
+    #   @figures.landmarks << Landmark.find_by_id(landmark_id)
+    # end
 
     @figure.save
     erb :'/figures/show'
