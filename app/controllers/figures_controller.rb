@@ -43,12 +43,13 @@ class FiguresController < ApplicationController
     params[:figure][:title].each do |title|
       @figure.titles << title
     end
-    
+
     @figure.landmarks.clear
     params[:figure][:landmarks].each do |landmark|
       @figures.landmarks << landmark
     end
 
+    @figure.save
     erb :'/figures/show'
   end
 
