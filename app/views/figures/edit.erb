@@ -12,7 +12,7 @@
 
       <h4>Titles:</h4>
       <% Title.all.each do |title| %>
-        <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"><%= title.name %>
+        <p><input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"><%= title.name %></p>
       <% end %>
 
       <br><br>
