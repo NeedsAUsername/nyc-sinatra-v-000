@@ -14,6 +14,11 @@ class FiguresController < ApplicationController
     erb :'figures/show'
   end
 
+  get '/figures/:id/edit' do
+    @figure = Figure.find_by_id(params[:id])
+    erb : '/figures/edit'
+  end
+
   post '/figures' do
     @figure = Figure.create(params[:figure])
 
@@ -28,6 +33,15 @@ class FiguresController < ApplicationController
     end
 
     redirect "/figures/#{@figure.id}"
+  end
+
+  post '/figures/:id' do
+    @figure = Figure.find_by_id(params[:figure])
+    @figure.name = params[:figure][:name]
+
+    @figure.titles.
+
+    erb :'/figures/show'
   end
 
 end
