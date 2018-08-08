@@ -39,7 +39,7 @@ class FiguresController < ApplicationController
     @figure = Figure.find_by_id(params[:figure])
     @figure.name = params[:figure][:name]
 
-    
+    @figure 
 
     erb :'/figures/show'
   end
