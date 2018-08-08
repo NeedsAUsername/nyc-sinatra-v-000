@@ -43,11 +43,22 @@ class FiguresController < ApplicationController
     # params[:figure][:title_ids].each do |title_id|
     #   @figure.titles << Title.find_by_id(title_id)
     # end
-    # 
+    #
     # @figure.landmarks.clear
     # params[:figure][:landmark_ids].each do |landmark_id|
     #   @figures.landmarks << Landmark.find_by_id(landmark_id)
     # end
+
+    if !params[:title].empty?
+      @title = Title.create(params[:title])
+      @figure << @title
+    end
+
+    if !params[:landmark].empty?
+      @landmark = Landmark.create(params[:landmark])
+      @figure << @landmark
+    end
+
 
     @figure.save
     erb :'/figures/show'
