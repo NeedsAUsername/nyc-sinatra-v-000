@@ -40,7 +40,7 @@ class FiguresController < ApplicationController
     @figure.name = params[:figure][:name]
 
     @figure.titles.clear
-    params[:figure][:title].each do |title|
+    params[:figure][:title_ids].each do |title|
       @figure.titles << title
     end
 
