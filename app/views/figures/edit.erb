@@ -15,6 +15,12 @@
         <p><input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"><%= title.name %></p>
       <% end %>
 
+      <h4>Landmarks:</h4>
+      <% Landmark.all.each do |landmark| %>
+        <p><input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>"><%= landmark.name</p>
+      <% end %>
+
+
       <br><br>
       <input type="submit" value="Edit Figure">
     </form>
