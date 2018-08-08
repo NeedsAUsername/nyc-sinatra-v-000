@@ -8,8 +8,10 @@
     <h1>Editing Figure</h1>
 
     <form class="" action="index.html" method="post">
-      <h4>Name: <input type="text" name="figure[name]" id="figure_name" value=""></h4>
+      <h4>Name: <input type="text" name="figure[name]" id="figure_name" value="<%= @figure.name %>"></h4>
 
+      <% Title.all.each do |title| %>
+        <input type="checbox" name="figure[titles][]" id= "value="">
 
       <br><br>
       <input type="submit" value="Edit Figure">
