@@ -40,13 +40,13 @@ class FiguresController < ApplicationController
     @figure.name = params[:figure][:name]
 
     @figure.titles.clear
-    params[:figure][:title_ids].each do |title|
-      @figure.titles << title
+    params[:figure][:title_ids].each do |title_id|
+      @figure.titles << Title.find_by_id(title_id)
     end
 
     @figure.landmarks.clear
-    params[:figure][:landmarks].each do |landmark|
-      @figures.landmarks << landmark
+    params[:figure][:landmark_ids].each do |landmark_id|
+      @figures.landmarks << Landmark.find_by_id(landmark_id)
     end
 
     @figure.save
